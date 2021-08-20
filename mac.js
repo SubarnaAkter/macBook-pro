@@ -1,12 +1,34 @@
-function getUpdatedPrice(getIdName,price)
+function getUpdatedPrice(getIdName,productPrice)
 {
     const extraMemoryCost= document.getElementById(getIdName);
-    extraMemoryCost.innerText=parseInt(price);
+    extraMemoryCost.innerText=productPrice;
+    const price=parseFloat(productPrice);
+    calculateTotalPrice(price);
 }
 
-function calculateTotalPrice(){
+function calculateTotalPrice(price){
     
+  
+ const bestPriceText=document.getElementById('best-price').innerText;
+ const bestPrice=parseFloat(bestPriceText);
+ const totalPrice= bestPrice+price;
+
+ const totalPriceText=document.getElementById('total-price');
+ totalPriceText.innerText=totalPrice;
+ 
+ //total 
+ const totalText=document.getElementById('total');
+ totalText.innerText=totalPrice;
+
+ return totalPrice;
+
+ //total price with 20% vat
 }
+
+ 
+   
+ 
+
 //----------------memory-------------------
 // default memory button
 document.getElementById('default-memory-selection-btn').addEventListener('click',function(){
@@ -42,4 +64,17 @@ document.getElementById('prime-delivary-btn').addEventListener('click',function(
     document.getElementById('pre-delivary-btn').addEventListener('click',function(){
     getUpdatedPrice('delivary-charge',20);
 })
+
+const promoCode= document.getElementById('promo-code-field').value;
+if(promoCode =='stevekaku'){
+ document.getElementById('apply-btn').addEventListener('click',function()
+ {
+   const totalText =  document.getElementById('total').innerText;
+   const total=parseFloat(totalText);
+   console.log(total);
+  const discountPrice=total*0.2;
+  totalText.innerText=discountPrice;
+ })
+
+}
 
