@@ -3,15 +3,25 @@ function getUpdatedPrice(getIdName,productPrice)
     const extraMemoryCost= document.getElementById(getIdName);
     extraMemoryCost.innerText=productPrice;
     const price=parseFloat(productPrice);
-    calculateTotalPrice(price);
+    calculateTotalPrice();
 }
 
-function calculateTotalPrice(price){
+function calculateTotalPrice(){
     
   
  const bestPriceText=document.getElementById('best-price').innerText;
  const bestPrice=parseFloat(bestPriceText);
- const totalPrice= bestPrice+price;
+
+ const memoryCostText=document.getElementById('memory-cost').innerText;
+ const memoryCost=parseFloat(memoryCostText);
+
+ const storageCostText=document.getElementById('storage-cost').innerText;
+ const storageCost=parseFloat(storageCostText);
+
+ const delivaryChargeText=document.getElementById('delivary-charge').innerText;
+ const delivaryCharge=parseFloat(delivaryChargeText);
+
+ const totalPrice= bestPrice+memoryCost+storageCost+delivaryCharge;
 
  const totalPriceText=document.getElementById('total-price');
  totalPriceText.innerText=totalPrice;
@@ -21,14 +31,7 @@ function calculateTotalPrice(price){
  totalText.innerText=totalPrice;
 
  return totalPrice;
-
- //total price with 20% vat
 }
-
- 
-   
- 
-
 //----------------memory-------------------
 // default memory button
 document.getElementById('default-memory-selection-btn').addEventListener('click',function(){
@@ -64,17 +67,25 @@ document.getElementById('prime-delivary-btn').addEventListener('click',function(
     document.getElementById('pre-delivary-btn').addEventListener('click',function(){
     getUpdatedPrice('delivary-charge',20);
 })
-
-const promoCode= document.getElementById('promo-code-field').value;
-if(promoCode =='stevekaku'){
- document.getElementById('apply-btn').addEventListener('click',function()
+//20% discount
+const applyButton = document.getElementById('apply-btn').addEventListener('click',function(){
+const promoCodeField= document.getElementById('promo-code-field')
+const promoCode=promoCodeField.value;
+if(promoCode =='stevekaku')
+ 
  {
-   const totalText =  document.getElementById('total').innerText;
-   const total=parseFloat(totalText);
-   console.log(total);
-  const discountPrice=total*0.2;
-  totalText.innerText=discountPrice;
+   const totalPriceText =  document.getElementById('total-price');
+   const totalPrice=parseFloat(totalPriceText.innerText);
+   const discountPrice=totalPrice-totalPrice*0.2;
+
+   const totalText =  document.getElementById('total');
+   totalText.innerText=discountPrice;
+   promoCodeField.value='';
+  
+ }
+
+ 
  })
 
-}
+
 
