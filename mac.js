@@ -2,24 +2,22 @@ function getUpdatedPrice(getIdName,productPrice)
 {
     const extraMemoryCost= document.getElementById(getIdName);
     extraMemoryCost.innerText=productPrice;
-    const price=parseFloat(productPrice);
     calculateTotalPrice();
+}
+
+function getPriceElement(idName)
+{
+    const priceText=document.getElementById(idName).innerText;
+    const price=parseFloat(priceText);
+    return price;
 }
 
 function calculateTotalPrice(){
     
-  
- const bestPriceText=document.getElementById('best-price').innerText;
- const bestPrice=parseFloat(bestPriceText);
-
- const memoryCostText=document.getElementById('memory-cost').innerText;
- const memoryCost=parseFloat(memoryCostText);
-
- const storageCostText=document.getElementById('storage-cost').innerText;
- const storageCost=parseFloat(storageCostText);
-
- const delivaryChargeText=document.getElementById('delivary-charge').innerText;
- const delivaryCharge=parseFloat(delivaryChargeText);
+ const bestPrice= getPriceElement('best-price');
+ const  memoryCost= getPriceElement('memory-cost');
+ const storageCost= getPriceElement('storage-cost');
+ const  delivaryCharge= getPriceElement('delivary-charge');
 
  const totalPrice= bestPrice+memoryCost+storageCost+delivaryCharge;
 
