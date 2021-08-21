@@ -8,29 +8,29 @@
 
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body>
+<body >
     <header>
 
     </header>
 
-    <main>
-        <section class="grid grid-cols-2 gap-4 my-16">
+    <main class="overflow-x-hidden">
+        <section class="lg:grid grid-cols-2 gap-4 my-16 ">
              <!-----------------------image section------------------->
             <div>
-               <img  class="ml-auto mr-12" src="images/mac.png" alt="image of a macBook" width="60%">
+               <img  class="ml-auto mr-auto" src="images/mac.png" alt="image of a macBook" width="60%">
             </div>
-            <div class=" mr-24 ">
+            <div class="lg:mr-24 sm:mr-auto">
                  <!-----------------------top section------------------->
-                <div class="mb-12">
-                    <h1 class="text-4xl font-medium">Customize your blue 24-inch <br>
+                <div class="mb-12 ">
+                    <h1 class="text-4xl font-medium text-red-900">Customize your blue 24-inch <br>
                         with iMac with Apple M1 chip</h1>
    
-                    <p class="mt-4">Apple M1 chip with 8-core CPU with 4 performance Cores and 4 efficiency cores 7-core GPU and 16 core neural Engine 8GB unified memory 256 SSD storage Two thuderbold/USB 4 ports Magic Mouse keyboard US-English.</p>
+                    <p class="mt-4 ">Apple M1 chip with 8-core CPU with 4 performance Cores and 4 efficiency cores 7-core GPU and 16 core neural Engine 8GB unified memory 256 SSD storage Two thuderbold/USB 4 ports Magic Mouse keyboard US-English.</p>
                 </div>
                  
                 <!-----------------------memory section------------------->
-                 <div class="mb-12">
-                    <h3 class="text-2xl  font-medium">Memory</h3>
+                 <div class="mb-12"> 
+                    <h3 class="text-2xl  font-medium text-indigo-900">Memory</h3>
                     <button id="default-memory-selection-btn" class="border rounded-md border-gray-500 my-1 mr-1 px-4 py-1">8GB unified memory</button>
                     <button id="extra-memory-selection-btn" class="border rounded-md border-gray-500 my-1 px-4 py-1">16GB unified memory</button>
 
@@ -38,7 +38,7 @@
                 </div>
                 <!-----------------------storage section------------------->
                 <div class="mb-12">
-                    <h3 class="text-2xl  font-medium">Storage</h3>
+                    <h3 class="text-2xl  font-medium text-indigo-900">Storage</h3>
 
                     <button id="default-storage-btn" class="border rounded-md border-gray-500 my-1 mr-1 px-4 py-1">256GB SSD storage</button>
 
@@ -49,7 +49,7 @@
                 </div>
                  <!-----------------------Delivary date section------------------->
                 <div class="mb-12">
-                    <h3 class="text-2xl  font-medium">Choose your Delivary Option</h3>
+                    <h3 class="text-2xl  font-medium text-indigo-900">Choose your Delivary Option</h3>
 
                     <button id="prime-delivary-btn" class="border rounded-md border-gray-500 my-1 mr-1 px-2 py-1">Friday, Aug 25 FREE Prime Delivary</button>
 
@@ -69,7 +69,7 @@
                         
                     </div>
                     <hr>
-                    <div class="flex justify-between   my-2">
+                    <div class="flex justify-between  my-2">
                         <h3 class="text-xl  font-medium ">Extra Storage Cost</h3>
                         <h3 class="text-xl  font-medium">$<span id="storage-cost">0</span></h3>
                     </div>
@@ -80,10 +80,10 @@
                     </div>
                     <hr class="border border-gray-500">
                     <div class="flex justify-between  my-2">
-                        <h3 class="text-xl  font-medium ">Total Price</h3>
-                        <h3 class="text-xl  font-medium">$<span id="total-price">1299</span></h3>
+                        <h3 class="text-xl  font-medium text-indigo-900">Total Price</h3>
+                        <h3 class="text-xl  font-medium text-indigo-900">$<span id="total-price">1299</span></h3>
                     </div> 
-                  
+             <!-----------------------promo code------------------->        
                 </div>
                 <div>
                      <h3>Add Promo Code</h3>
@@ -94,8 +94,8 @@
                   <!-----------------------total------------------->
                 <div class="flex  my-8">
                    
-                <h3 class="text-3xl font-bold ">Total:</h3>
-                <h3 class="text-3xl font-bold  ml-24">$<span id="total">1299</span></h3>
+                <h3 class="text-3xl font-bold text-indigo-900">Total:</h3>
+                <h3 class="text-3xl font-bold  ml-24 text-indigo-900">$<span id="total">1299</span></h3>
                 </div>
             </div>
             
