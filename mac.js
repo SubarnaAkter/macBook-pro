@@ -85,7 +85,6 @@ if(promoCode =='stevekaku')
      alert('Opps! Invalid promo code. Please ,Try again');
  }
 
- 
  })
 
 
